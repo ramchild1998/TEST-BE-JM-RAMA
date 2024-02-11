@@ -1,0 +1,27 @@
+Tes JM
+Ramadiansyah, S.T
+11 Feb 2024 Start on 12.35 PM 
+
+Work Sheet
+
+1. Install Node.js (https://nodejs.org/en/#download)
+
+2. Install PostgreSQL (https://www.postgresql.org/download/windows/)
+
+3. "npm install express sequelize pg pg-hstore body-parser cors" && "npm install -g sequelize-cli"
+
+4. buat model dan sesuaikan dengan soal untuk melakukan migrasi contoh: 
+4.1 sequelize-cli model:generate --name employee_profile --attributes employee_id:integer,place_of_birth:integer,date_of_birth:date,gender:enum,is_married:boolean,prof_pict:string,created_by:string,updated_by:string,created_at:date,updated_at:date
+4.2 sequelize-cli model:generate --name employee --attributes nik:string,name:string,is_active:boolean,start_date:date,end_date:date,created_by:string,updated_by:string,created_at:date,updated_at:date
+4.3 sequelize-cli model:generate --name education --attributes employee_id:integer,name:string,level:enum,description:string,created_by:string,updated_by:string,created_at:date,updated_at:date
+4.4 sequelize-cli model:generate --name employee_family --attributes employee_id:integer,name:string,identifier:string,job:string,place_of_birth:integer,date_of_birth:date,religion:enum,is_life:boolean,is_divorced:boolean,relation_status:enum,created_by:string,updated_by:string,created_at:date,updated_at:date
+
+5. memastikan data di source dan sesuaikan, karena terdapat beberapa data yang salah / Perlu di Fixing, seperti place_of_birth seharusnya STRING bukan DATE, sebab soal berikutnya pada nomor 3 terdapat isian place_of_birth menggunakan STRING (Jakarta & Sukabumi).
+
+6. melakukan insert data dengan menyesuaikan soal, dan beberapa data yang perlu dimasukkan yaudah budi dan jarot memerlukan create_at untuk dapat insert data secara baik.
+
+7. melakukan pencarian query untuk jawaban nomor 4. kode yang digunakan terdapat pada folder RAW_QUERY (Jawaban No4.sql) yang saya sudah buatkan. 
+
+8. membuat REST API menggunakan POSTMAN untuk mengakses endpoint dari Express.js dan ORM sequelize. Contohnya : http://localhost:3000/employee (untuk get all data) 
+
+9. membuat dockerfile pada project (clear)
